@@ -5,7 +5,7 @@
  * Plugin Name: WordPress Post Type Switcher
  * Plugin URI:  https://alphawebcreation.com/plugins/
  * Description: Allows users to switch a post to a custom post type or back to default posts.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Alpha Web Creation
  * Author URI:  https://alphawebcreation.com/
  * License: GPLv2 or later
@@ -15,7 +15,7 @@
  * Tested up to: 6.3
 */
 
-// Create a custom admin page for post type switching
+// Create a custom admin page for post type switching V2
 function custom_post_type_switcher_page() {
     add_menu_page(
         'WordPress Post Type Switcher',
