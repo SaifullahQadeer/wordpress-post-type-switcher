@@ -175,7 +175,7 @@ function check_for_plugin_update($transient) {
         $current_version = $transient->checked[$plugin_slug];
 
         // Define the URL of your GitHub release ZIP archive
-        $github_release_url = 'https://github.com/SaifullahQadeer/wordpress-post-type-switcher/archive/refs/tags/post-switcher.zip';
+        $github_release_url = 'https://github.com/SaifullahQadeer/wordpress-post-type-switcher/archive/refs/tags/wordpress-post-type-switcher.zip';
 
         // Get the latest version number from the ZIP archive's URL
         preg_match('/\/([^\/]+)\.zip$/', $github_release_url, $matches);
