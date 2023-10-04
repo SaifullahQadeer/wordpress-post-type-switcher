@@ -5,9 +5,11 @@
  * Plugin Name: WordPress Post Type Switcher
  * Plugin URI:  https://alphawebcreation.com/plugins/
  * Description: Allows users to switch a post to a custom post type or back to default posts.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Alpha Web Creation
  * Author URI:  https://alphawebcreation.com/
+ * License: GPLv2 or later
+ * License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * Requires at least: 4.9
  * Requires PHP: 5.2.4
  * Tested up to: 6.3
@@ -173,7 +175,7 @@ function check_for_plugin_update($transient) {
         $current_version = $transient->checked[$plugin_slug];
 
         // Define the URL of your GitHub release ZIP archive
-        $github_release_url = 'https://github.com/SaifullahQadeer/post-type-switcher/archive/refs/tags/post-switcher.zip';
+        $github_release_url = 'https://github.com/SaifullahQadeer/wordpress-post-type-switcher/archive/refs/tags/post-switcher.zip';
 
         // Get the latest version number from the ZIP archive's URL
         preg_match('/\/([^\/]+)\.zip$/', $github_release_url, $matches);
