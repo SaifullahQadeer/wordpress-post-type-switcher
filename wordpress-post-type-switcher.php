@@ -1,4 +1,4 @@
-<?php
+d<?php
 /*
  * WordPress Post Type Switcher
  *
@@ -19,10 +19,11 @@
 function custom_post_type_switcher_page() {
     add_menu_page(
         'WordPress Post Type Switcher',
-        'Post Type Switcher',
+        'WPTS',
         'edit_posts',
         'wordpress-post-type-switcher',
-        'custom_post_type_switcher_page_content'
+        'custom_post_type_switcher_page_content',
+        'dashicons-randomize' 
     );
 }
 
@@ -60,21 +61,23 @@ function custom_post_type_switcher_page_content() {
     $post_types = get_post_types(array('public' => true), 'objects');
     $post_type_slugs = array_keys($post_types);
     
-    echo '<div class="wrap">';
-    echo '<h1 class="pts-title">Post Type Switcher</h1>';
+    echo '<div class="wrap wpts-container">';
+    echo '<h1 class="pts-title">WordPress Post Type Switcher</h1>';
     echo '<form method="post">';
-    echo '<label for="custom-post-type-dropdown">Select a post type:</label>';
-    echo '<select name="custom-post-type-dropdown" id="custom-post-type-dropdown">';
+    echo '<div class="wpts-top-bar">';
+    echo '<div><select name="custom-post-type-dropdown" id="custom-post-type-dropdown">';
 
     foreach ($post_types as $post_type) {
         echo "<option value='{$post_type->name}'>{$post_type->label}</option>";
     }
 
-    echo '</select>';
+    echo '</select></div>';
 
-    echo '<h2>Select Posts to Update</h2>';
-    echo '<label><input type="checkbox" id="select-all-checkbox"> Select All</label>';
-    echo '<ul>';
+    echo '<div>
+            <label><input type="checkbox" id="select-all-checkbox"> Select All</label>
+          </div>';
+    echo '</div>';
+    echo '<ul class="post-list-items">';
 
     // Retrieve both "posts" and custom post type "posts"
     $post_types_to_query = array('post', 'your_custom_post_type_slug');
@@ -83,13 +86,13 @@ function custom_post_type_switcher_page_content() {
         $posts = get_posts(array('post_type' => $post_type_to_query, 'posts_per_page' => -1));
 
         foreach ($posts as $post) {
-            echo '<li><input type="checkbox" class="post-checkbox" name="post_ids[]" value="' . $post->ID . '"> ' . $post->post_title . ' (' . $post_type_to_query . ')</li>';
+            echo '<li class="post-list-item"><div class="wpts-post-title"><input type="checkbox" class="post-checkbox" name="post_ids[]" value="' . $post->ID . '"> ' . $post->post_title . '</div><span id="wpts-post-type-title">' . $post_type_to_query . '</span></li>';
         }
     }
 
     echo '</ul>';
 
-    echo '<input type="submit" name="submit" class="button button-primary" value="Update Posts">';
+    echo '<input type="submit" name="submit" class="button button-primary" value="Migrate Posts">';
     echo '</form>';
     echo '</div>';
 

@@ -1,21 +1,60 @@
-h1.pts-title {
-    padding: 14px 26px;
-    background-color: #f2f0f5;
-    border-radius: 5px;
-    margin-bottom: 40px;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-.toplevel_page_wordpress-post-type-switcher #wpcontent {
+body {
+    background-color: #fff;
+    font-family: 'Inter';
+}
+label {
+    font-size: 16px;
+    color: #000;
+}
+.wpts-container #wpcontent {
     background-color: #fff;
     padding-top: 20px;
+    height: 100vh;
 }
-.toplevel_page_wordpress-post-type-switcher form {
-    border: 1px solid #e5e5e5;
-    padding: 20px;
+.wpts-container {
+    padding: 25px;
+    background-color: #eff4f7;
+    border-radius: 8px;
+}
+.wpts-container .pts-title {
+    margin-bottom: 20px;
+    padding: unset !important;
+    font-weight: 700;
+    color: #000;
+}
+.wpts-container .wpts-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 8px 16px 8px 12px;
     border-radius: 5px;
 }
-.toplevel_page_wordpress-post-type-switcher h2 {
-    padding: 14px 26px;
-    background-color: #f2f0f5;
+.wpts-container #custom-post-type-dropdown {
+    width: 220px;
+    border: 1px solid #ddd;
+}
+.wpts-container .post-list-items {
+    margin-bottom: 20px;
+}
+.wpts-container .post-list-item {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.wpts-container #wpts-post-type-title {
+    text-transform: capitalize;
+    background-color: #fff;
+    padding: 5px 10px;
     border-radius: 5px;
-    margin: 20px 0px;
 }
